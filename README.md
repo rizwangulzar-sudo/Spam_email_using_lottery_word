@@ -1,101 +1,65 @@
-Email Spam Detection using Bayes Theorem
-Project Overview
-This project implements a simple Email Spam Detection system using Bayes' Theorem. The goal of the project is to determine the probability that an email is spam given the occurrence of specific words (e.g., "lottery") in the email content.
+# Email Spam Detection using Bayes' Theorem
 
-Problem Statement:
-Given an email, if it contains certain words like "lottery", "win", or "prize", the system calculates the probability that the email is spam using Bayes' Theorem.
+## 🧠 **Project Overview**
 
-Methodology
-The Bayes' Theorem is used to update the probability of an email being spam after observing the presence of specific words in the email. The formula is as follows:
+This project implements an **Email Spam Detection** system using **Bayes' Theorem** to classify emails as **spam** or **normal** based on the occurrence of certain keywords. For example, if an email contains the word "lottery," the system calculates the probability of it being spam.
 
-𝑃
-(
-Spam
-∣
-"lottery"
-)
-=
-𝑃
-(
-"lottery"
-∣
-Spam
-)
-×
-𝑃
-(
-Spam
-)
-𝑃
-(
-"lottery"
-)
-P(Spam∣"lottery")= 
-P("lottery")
-P("lottery"∣Spam)×P(Spam)
-​
- 
+---
+
+## 📊 **Problem Statement**
+
+The problem is to determine whether an email is **spam** based on the occurrence of specific words in the email content. For this project, the word "lottery" is used as an indicator, and Bayes' Theorem is applied to calculate the probability of an email being spam given the presence of this word.
+
+---
+
+## 📐 **Methodology**
+
+We use **Bayes' Theorem** to calculate the conditional probability:
+
+\[
+P(\text{Spam} | \text{"lottery"}) = \frac{P(\text{"lottery"} | \text{Spam}) \times P(\text{Spam})}{P(\text{"lottery"})}
+\]
+
 Where:
+- \(P(\text{Spam})\) is the prior probability of an email being spam.
+- \(P(\text{"lottery"} | \text{Spam})\) is the likelihood of the word "lottery" appearing in a spam email.
+- \(P(\text{"lottery"})\) is the total probability of encountering the word "lottery" in any email.
 
-𝑃
-(
-Spam
-)
-P(Spam) is the prior probability of an email being spam.
+By plugging in the relevant values, Bayes' Theorem helps us calculate the probability of an email being spam based on the observed word.
 
-𝑃
-(
-"lottery"
-∣
-Spam
-)
-P("lottery"∣Spam) is the likelihood of the word "lottery" appearing in a spam email.
+---
 
-𝑃
-(
-"lottery"
-)
-P("lottery") is the total probability of encountering the word "lottery" in any email.
+## 🛠️ **Project Requirements**
 
-Project Requirements
-Python 3.x
+- Python 3.x
+- Google Colab (or Jupyter Notebook)
+- GitHub for version control and hosting the project
 
-Google Colab (for running the notebook)
+---
 
-GitHub for version control and hosting the project
+## 💻 **Code Explanation**
 
-Code Explanation
-Input Data: The project assumes certain prior probabilities for spam and normal emails, and the likelihood of the word "lottery" appearing in spam and normal emails.
+### 1. **Input Data**:
+   - The project assumes prior probabilities for spam and normal emails.
+   - Likelihood values for the word "lottery" in spam and normal emails are given.
 
-Bayes' Theorem Calculation: Using the given input data, Bayes' Theorem is applied to calculate the probability of an email being spam after observing the word "lottery".
+### 2. **Bayes' Theorem Calculation**:
+   Using the input data, Bayes' Theorem is applied to calculate the probability of an email being spam given the occurrence of the word "lottery."
 
-Output: The result is the probability that the email is spam, based on the occurrence of specific words.
+### 3. **Output**:
+   The output is the probability that the email is spam, based on the presence of specific words.
 
-Results
-Based on the provided probabilities:
+---
 
-If the word "lottery" appears in an email, the probability that it is spam is approximately 81.8%.
+## 📈 **Results**
 
-How to Run the Code
-Clone the repository:
+- If the word "lottery" appears in an email, the probability of it being **spam** is approximately **81.8%** based on the given prior and likelihood values.
 
-bash
-Copy
-Edit
-git clone https://github.com/YourUsername/Email-Spam-Detection.git
-Open the Spam-Detection.ipynb notebook in Google Colab or Jupyter Notebook.
+---
 
-Run the cells to perform the Bayes' Theorem calculation for spam detection.
+## 🚀 **How to Run the Code**
 
-You can modify the input data (prior probabilities and likelihood values) to observe how different conditions affect the spam detection result.
+1. **Clone the repository**:
 
-Contributing
-Feel free to fork this repository, make improvements, and contribute to enhancing the email spam detection system.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Notes:
-Replace YourUsername with your GitHub username in the repository URL.
-
-You can further enhance this project by incorporating more complex machine learning techniques and datasets to improve spam detection accuracy.
+   ```bash
+   git clone https://github.com/YourUsername/Email-Spam-Detection.git
